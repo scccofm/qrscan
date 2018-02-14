@@ -11,10 +11,7 @@ var app = new Vue({
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
       alert(content);
-      $.post( "https://script.google.com/a/cofm.edu.in/macros/s/AKfycbzObHXjA-gXSyxvyRc5nYVs6yP2sElNpfuWMsIGtLf1yUUXd4n7/exec", content)
-  .done(function( "Success") {
-    alert(content);
-  });
+      $.post( "https://script.google.com/a/cofm.edu.in/macros/s/AKfycbzObHXjA-gXSyxvyRc5nYVs6yP2sElNpfuWMsIGtLf1yUUXd4n7/exec", content);
       self.scans.unshift({ date: +(Date.now()), content: content });
     });
     Instascan.Camera.getCameras().then(function (cameras) {
